@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: mauli-dashboard
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: SUPERADMIN_PASSWORD
+        sync: false
+      - key: INITIAL_PASSWORD
+        sync: false
+      - key: DATA_DIR
+        value: /app/data

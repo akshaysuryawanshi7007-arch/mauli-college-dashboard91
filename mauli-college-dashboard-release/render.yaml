@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: mauli-college-dashboard
+    runtime: python
+    buildCommand: ""
+    startCommand: python server.py
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: SUPERADMIN_PASSWORD
+        value: superadmin123
+      - key: INITIAL_PASSWORD
+        value: mauli123
+      - key: DATA_DIR
+        value: ./data
